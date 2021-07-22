@@ -2,6 +2,7 @@ package application;
 
 import controller.HomeController;
 import controller.IController;
+import controller.MovieController;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
@@ -29,6 +30,7 @@ public class MyApplication {
         this.controllersByURL = new HashMap<>();
 
         this.controllersByURL.put("/", new HomeController());
+        this.controllersByURL.put("/movie", new MovieController());
     }
 
     public IController resolveControllerForRequest(final HttpServletRequest request) {

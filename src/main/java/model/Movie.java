@@ -10,6 +10,7 @@ public class Movie {
     private String _id;
     private String title;
     private int year;
+    private int runtime;
     private List<String> cast;
     private String plog;
     private String fullPlot;
