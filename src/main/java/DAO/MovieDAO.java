@@ -40,7 +40,8 @@ public class MovieDAO extends AbsDAO {
         movie.setGenres((List<String>) document.get("genres"));
         movie.setPoster(document.getString("poster"));
         movie.setYear(document.getInteger("year"));
-        movie.setRuntime(document.getInteger("runtime"));
+        if (document.containsKey("runtime"))
+            movie.setRuntime(document.getInteger("runtime"));
 
         return movie;
     }
@@ -54,12 +55,15 @@ public class MovieDAO extends AbsDAO {
         DistinctIterable<String> genres = movies.distinct("genres", String.class);
         return genres;
     }
-    public AggregateIterable<Document> getTopGenres(int limit) {
+    public List<Movie> searchMovies(Document filter, Document sort, int limit, int skip ) {
         MongoCollection<Document> movies = getDB().getCollection("movies");
-        AggregateIterable<Document> result = movies.aggregate(Arrays.asList(new Document("$unwind", "$genres"),
-                new Document("$group", new Document("_id", "$genres").append("numOfMovies",new Document("$sum", 1L))),
-                new Document("$sort", new Document("numOfMovies", -1L)),
-                new Document("$limit",limit)));
-        return result;
+        List<Movie> list = new ArrayList<>();
+        movies.find(filter).sort(sort).limit(limit).skip(skip).forEach(d -> list.add(docToMovie(d)));
+        return list;
+    }
+    public long getMoviesNumber(Document filter) {
+        MongoCollection<Document> movies = getDB().getCollection("movies");
+        return movies.countDocuments(filter);
+
     }
 }
