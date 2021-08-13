@@ -3,12 +3,13 @@ package model;
 import lombok.Data;
 import org.bson.types.ObjectId;
 
-import java.util.Date;
 import java.util.List;
 
 @Data
 public class Movie {
     private ObjectId id;
+    private String movieID;
+
     private String title;
     private int year;
     private int runtime;
@@ -31,3 +32,4 @@ public class Movie {
     private Imdb imdb;
     private Tomatoes tomatoes;
 }
+

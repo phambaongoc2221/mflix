@@ -8,3 +8,4 @@ public class Viewer {
     private double rating;
     private int numReviews;
 }
+

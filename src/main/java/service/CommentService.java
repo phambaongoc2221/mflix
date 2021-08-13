@@ -1,10 +1,14 @@
 package service;
 
-import DAO.CommentDAO;
+import DAO.MongoDB.CommentDAO;
 import com.mongodb.client.FindIterable;
 import model.Comment;
 import org.bson.Document;
 
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+
+@Path("/comment")
 public class CommentService {
 
     public FindIterable<Comment> getComments(String by, Object value) {
@@ -15,7 +19,10 @@ public class CommentService {
         return list;
     }
 
-    public void addComment(Comment comment) {
+    @POST
+    @Path("/add")
+    public String addComment(Comment comment) {
         new CommentDAO().addComment(comment);
+        return "Done";
     }
 }

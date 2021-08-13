@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="project2_150721-1.0-SNAPSHOT.war">
+    <root id="archive" name="Mflix-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="project2_150721:war exploded" />
     </root>
   </artifact>
