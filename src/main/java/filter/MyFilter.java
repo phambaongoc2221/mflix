@@ -31,7 +31,7 @@ public class MyFilter implements Filter {
 
 
     private boolean process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        if (request.getRequestURI().startsWith("/css") || request.getRequestURI().startsWith("/images") || request.getRequestURI().startsWith("/templates"))
+        if (request.getRequestURI().startsWith("/js") || request.getRequestURI().startsWith("/css") || request.getRequestURI().startsWith("/images") || request.getRequestURI().startsWith("/templates"))
             return false;
         IController controller = this.application.resolveControllerForRequest(request);
         if (controller == null) {
