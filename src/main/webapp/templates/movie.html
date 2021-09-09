@@ -17,35 +17,29 @@
 
     <div class="row  mt-3">
         <div class="col-md-8 order-md-1 order-2">
-            <div th:if="*{genres!=null}">
-                <hr>
-                🎞 <b>Genres:</b> <span class="text-primary" th:each="text,iterStat : *{genres}" th:text="${text}+ ${!iterStat.last ? ', ' : ''}">Action, Crime, Drama</span>
-            </div>
+            <hr>
+            🎞 <b>Genres:</b> <span class="text-primary" th:each="text,iterStat : *{genres}" th:text="${text}+ ${!iterStat.last ? ', ' : ''}">Action, Crime, Drama</span>
+
             <div th:if="*{fullplot!=null}">
                 <hr>
                 <span th:text="*{fullplot}">Description</span>
             </div>
-            <div th:if="*{directors!=null}">
-                <hr>
-                🎬 <b>Director:</b> <span class="text-primary" th:each="text,iterStat : *{directors}" th:text="${text}+ ${!iterStat.last ? ', ' : ''}">James</span>
-            </div>
+
+            <hr>
+            🎬 <b>Director:</b> <span class="text-primary" th:each="text,iterStat : *{directors}" th:text="${text}+ ${!iterStat.last ? ', ' : ''}">James</span>
             <div th:if="*{writers!=null}">
                 <hr>
                 ✍ <b>Writers:</b> <span class="text-primary" th:each="text,iterStat : *{writers}" th:text="${text}+ ${!iterStat.last ? ', ' : ''}">David, Peter</span>
             </div>
-            <div th:if="*{cast!=null}">
-                <hr>
-                🌟 <b>Stars:</b> <span class="text-primary" th:each="text,iterStat : *{cast}" th:text="${text}+ ${!iterStat.last ? ', ' : ''}">Tom Hanks, Leonardo</span>
-            </div>
-            <div th:if="*{languages!=null}">
-                <hr>
-                🌎 <b>Languages:</b> <span class="text-primary" th:each="text,iterStat : *{languages}" th:text="${text}+ ${!iterStat.last ? ', ' : ''}">Tom Hanks, Leonardo</span>
-                🗺 <b>Countries:</b> <span class="text-primary" th:each="text,iterStat : *{countries}" th:text="${text}+ ${!iterStat.last ? ', ' : ''}">USA, UK</span>
-            </div>
-            <div th:if="*{awards!=null}">
-                <hr>
-                🏆 <b>Awards:</b> <span th:text="*{awards.text}">Awards</span>
-            </div>
+            <hr>
+            🌟 <b>Stars:</b> <span class="text-primary" th:each="text,iterStat : *{cast}" th:text="${text}+ ${!iterStat.last ? ', ' : ''}">Tom Hanks, Leonardo</span>
+
+            <hr>
+            🌎 <b>Languages:</b> <span class="text-primary" th:each="text,iterStat : *{languages}" th:text="${text}+ ${!iterStat.last ? ', ' : ''}">Tom Hanks, Leonardo</span>
+            🗺 <b>Countries:</b> <span class="text-primary" th:each="text,iterStat : *{countries}" th:text="${text}+ ${!iterStat.last ? ', ' : ''}">USA, UK</span>
+
+            <hr>
+            🏆 <b>Awards:</b> <span th:text="*{awards.text}">Awards</span>
 
             <div th:if="*{tomatoes!=null && tomatoes.critic!=null}">
                 <hr>
@@ -53,7 +47,7 @@
                 🍿 <b>Audience rating:</b> <span th:text="*{tomatoes.viewer.rating}">8.8 </span> (<span th:text="*{tomatoes.viewer.numReviews}">20</span> reviews)
             </div>
 
-            <div th:if="*{imdb!=null&&imdb.rating>0}">
+            <div th:if="*{imdb.rating>0}">
                 <hr>
                 👍 <b>IMDB:</b> <span th:text="*{imdb.rating}">8.8 </span> (<span th:text="*{imdb.votes}">20</span> votes)
             </div>
@@ -92,7 +86,7 @@
 
         </div>
         <div class="col-md-4 order-md-2 order-1">
-            <img class="movie-poster" src="../images/wall1.jpg" th:src="*{poster}">
+            <img class="movie-poster" src="../images/phim1.jpg" th:src="*{poster}">
         </div>
     </div>
 </main>

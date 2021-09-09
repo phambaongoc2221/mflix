@@ -1,13 +1,12 @@
-var firebaseConfig = {
-    apiKey: "AIzaSyBy7jLeJGFkf2f3NGj31HUinBoCoapLY_c",
-    authDomain: "mflix-3c4b9.firebaseapp.com",
-    projectId: "mflix-3c4b9",
-    storageBucket: "mflix-3c4b9.appspot.com",
-    messagingSenderId: "40233807911",
-    appId: "1:40233807911:web:0a6234bcc4ee4cef5ade02",
-    measurementId: "G-V36EWQNVE8"
-};
 
+var firebaseConfig = {
+apiKey: "AIzaSyDfmj1-3wnUWLKVl8l-9F1k9KbPaiJLJNs",
+authDomain: "myproject-e258f.firebaseapp.com",
+projectId: "myproject-e258f",
+storageBucket: "myproject-e258f.appspot.com",
+messagingSenderId: "226196385175",
+appId: "1:226196385175:web:e669193eb30d8d497be8d2"
+};
 var uiConfig = {
     signInFlow: 'popup',
     signInOptions: [
@@ -43,7 +42,6 @@ $(function () {
         $("#login-spinner").addClass("d-none")
     });
 });
-
 function handleSignedInUser(user) {
     $(".user").removeClass("d-none")
     $(".guest").addClass("d-none")

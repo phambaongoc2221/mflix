@@ -3,11 +3,14 @@ package controller;
 import model.Movie;
 import org.thymeleaf.ITemplateEngine;
 import service.MovieService;
+import utils.MyCookie;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
+import java.util.Locale;
 
 public class HomeController extends MyController {
 
